@@ -1,6 +1,9 @@
-import { IconFolderCode } from "@tabler/icons-react";
-import { ArrowUpRightIcon, Plus } from "lucide-react";
-
+import { HugeiconsIcon } from "@hugeicons/react";
+import {
+  LinkOffIcon,
+  PlusIcon,
+  ArrowUpRight01Icon,
+} from "@hugeicons/core-free-icons";
 import { Button } from "@/shared/components/ui/button";
 import {
   Empty,
@@ -18,24 +21,32 @@ function PageNotFound() {
       <Empty>
         <EmptyHeader>
           <EmptyMedia variant="icon">
-            <IconFolderCode />
+            <HugeiconsIcon icon={LinkOffIcon} />
           </EmptyMedia>
-          <EmptyTitle>No Projects Yet</EmptyTitle>
+          <EmptyTitle>Page not found</EmptyTitle>
           <EmptyDescription>
-            You haven&apos;t created any projects yet. Get started by creating
-            your first project.
+            The page you are looking for does not exist or has been moved.
           </EmptyDescription>
         </EmptyHeader>
         <EmptyContent className="flex-row justify-center gap-2">
           <Button>
-            <Link to="/feed">Explore Feed</Link>
+            <Link to="/">Explore Feed</Link>
           </Button>
-          <Button variant="outline">
-            <Plus /> <span>New Article</span>
+          <Button variant="outline" asChild>
+            <Link to="/articles/new">
+              <HugeiconsIcon icon={PlusIcon} /> <span>New Article</span>
+            </Link>
           </Button>
         </EmptyContent>
-        <Button variant="link" className="text-muted-foreground" size="sm">
-          Learn More <ArrowUpRightIcon />
+        <Button
+          variant="link"
+          className="text-muted-foreground"
+          size="sm"
+          asChild
+        >
+          <Link to="/search">
+            Find an Article <HugeiconsIcon icon={ArrowUpRight01Icon} />
+          </Link>
         </Button>
       </Empty>
     </div>
