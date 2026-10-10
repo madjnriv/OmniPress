@@ -11,14 +11,12 @@ import {
   Search,
   Plus,
   MessageCircle,
-  Video,
-  Image,
   type LucideIcon,
 } from "lucide-react";
 
 export interface SidebarCtas {
   id: string;
-  path?: string;
+  path: string;
   label: string;
   icon: LucideIcon;
   variant: string;
@@ -30,22 +28,7 @@ export const sidebarCTAs: SidebarCtas[] = [
     label: "New article",
     icon: Plus,
     variant: "primary",
-    children: [
-      {
-        id: "1",
-        label: "Post",
-        path: "/articles/new/post",
-        icon: Image,
-        variant: "primary",
-      },
-      {
-        id: "2",
-        label: "Reel",
-        path: "/articles/new/reel",
-        icon: Video,
-        variant: "primary",
-      },
-    ],
+    path: "/articles/new",
   },
   {
     id: "2",
