@@ -4,6 +4,7 @@ import AppLayout from "@/layouts/app-layout";
 import PageNotFound from "@/shared/components/page-not-found";
 import Home from "@/pages/home";
 import { RouteGuard } from "./route-guard";
+import NewArticle from "@/pages/new-article";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +15,7 @@ export const router = createBrowserRouter([
         element: <AppLayout />,
         children: [
           { index: true, element: <Home /> },
-          { path: "articles/new", element: <div>Create New Article</div> },
+          { path: "articles/new", element: <NewArticle /> },
         ],
       },
     ],
